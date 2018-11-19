@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>음모론</title>
+	<meta charset="utf-8">
+
+
+</head>
+<style type="text/css">
+	@import url('https://fonts.googleapis.com/css?family=Noto+Serif+JP:200,300,400,500,600,700,900|Playfair+Display+SC:900i&subset=japanese');
+	@import url('https://fonts.googleapis.com/css?family=Song+Myung:200,300,400,500,600,700,900|Playfair+Display+SC:900i&subset');
+	body {position: relative; background-color:black;}
+	/*#um{position: absolute; font-family: 'Noto Serif JP', sans-serif; font-weight:900; font-size:100pt; left: 10px; margin: 0;}*/
+	#gif{position: absolute; top: 100px; left: 200px; z-index: 0; opacity: 1;}
+	#gif1{position: absolute; top: 550px; left: 300px; z-index: 0; opacity: 1;}
+	#gif2{position: absolute; top: 500px; left: 20px; z-index: 0; opacity: 1;}
+	#gif3{position: absolute; top: 150px; left: 1000px; z-index: 0; opacity: 1;}
+	#gif4{position: absolute; top: 250px; left: 1250px; z-index: 0; opacity: 1;}
+	#gif5{position: absolute; top: 20px; left: 700px; z-index: 0; opacity: 1;}
+	.title{position: absolute; margin: 0; width: 300px; height: 100px; width: 300px; height: auto; top: 30px; left: 20px;}
+	.line{position: absolute; top: 40px; left: 25px; margin: 0;width: 300px; height: 100px; visibility: hidden; z-index: 9999;}
+	.line1{position: absolute; top: 140px; margin: 0;width: 300px; height: 100px; opacity: 0.7; display: none; /*animation: drop 1s infinite;*/}
+	#box{position: absolute; /*background-color: red;*/ width: 300px; height: auto; top: 130px; left: 18px;}
+	#text{position: absolute; /*background-color: rgba(255,0,0,0.5)*/; width: 1100px; height: 600px; top: 150px; left: 200px; font-family: 'Song Myung', serif;  font-size: 2.5em; font-weight: 900; color: red; /*overflow: scroll;*/ display: none;}
+	
+
+	
+</style>
+<body>
+
+	<div id="gif">
+		<img src="moon.gif" style="width: 500px; height: auto;">
+	</div>
+	<div id="gif1">
+		<img src="hmm.gif" style="width: 200px; height: auto;">
+	</div>
+	<div id="gif2">
+		<img src="a.gif" style="width: 300px; height: auto;">
+	</div>
+	<div id="gif4">
+		<img src="giphy.gif" style="width: 200px; height: auto;">
+	</div>
+	<div id="gif3">
+		<img src="ufo.gif" style="width: 300px; height: auto;">
+	</div>
+	<div id="gif5">
+		<img src="ww.gif" style="width: 300px; height: auto;">
+	</div>
+	
+	<div id="dd" style="z-index: 0;">	
+		<img src="dd.png" class="title"  style=" width: 300px; height: auto;">
+		<!-- <img src="d.png" class="line" style=" width: 300px; height: auto;"> -->
+	</div>
+	<div id="line1" class="line1" >
+		<img src="d.png" style="width: 300px; height: auto;">
+	</div>
+	
+	<div id="box"></div>
+	<div id="f"></div>
+	<div id="text"></div>
+
+	<script type="text/javascript">
+		var toggle = "off";
+		var b = document.getElementById('dd');
+		var c = document.getElementById("line1");
+		var d = document.getElementById("text");
+
+
+			b.onclick = function() {
+				if (toggle == "off") {
+					d.style.display = "block";
+					document.getElementById("gif").style.opacity = 0.5;
+					document.getElementById("gif1").style.opacity = 0.5;
+					document.getElementById("gif2").style.opacity = 0.5;
+					document.getElementById("gif3").style.opacity = 0.5;
+					document.getElementById("gif4").style.opacity = 0.5;
+					document.getElementById("gif5").style.opacity = 0.5;
+					
+					var total = 0;
+
+					for (var i = 0; i < 10; i++){
+						var newc = c.cloneNode(true);
+						newc.style.display = "block";
+						newc.style.top = 63 * i + "px";
+
+						box.appendChild(newc);
+
+					}
+				var o =0,text;
+				text = "사회에서 원인을 알 수 없는 사건이나 현상이 발생했을 때, 그 원인에 대해서 어떤 개인이나 집단이 의도적으로 확신을 가지고 펼치는 설명이다. 대개 그 발단이 되는 사건은 사회 전체에 강력한 파급력을 끼치며, 사람들에게 그 사회를 뒤흔드는 듯한 불안감을 주는 경우가 많다. 음모론적인 설명에는 핵심적으로 권력자, 지도자, 의사결정자들에 대한 불신이 포함되어 있다. 최신의 한 연구에 따르면, 음모론을 통하여 사람들이 자신들이 살아가는 사회체제와 구조에 만족하고 정당화하게 되는 것이 가능하다고 한다. 만악의 근원을 일부 악한 사람들의 문제로 몰아가면 어쨌건 그 사회 자체는 좋은 것이라고 느끼게 되기 때문이라고."
+				function typing() {
+					if(o<text.length){
+				d.innerHTML += text.charAt(o);
+				o++;
+				repeater = setTimeout(typing,50);
+					}
+				}
+				typing();
+
+				toggle = "on";
+				}else if (toggle == "on") {
+
+						toggle = "off";
+						clearTimeout(repeater);
+						c.style.display = "none";
+						
+						box.innerHTML = "";
+						d.innerHTML = "";
+
+				}
+			}
+	</script>
+	
+
+
+</body>
+</html>
